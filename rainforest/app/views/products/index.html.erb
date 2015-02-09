@@ -1,8 +1,12 @@
-<h1>Products# Indext</h1>
-<%= link_to "Product", "/products/new" %>
+<h1>Products</h1>
+<%= link_to "Product New", "/products/new" %>
+
 
 <% @products.each do |product| %>
-  <p><%= product.name %>, <%= product.description %>, <%= product.price_in_cents %> </p>
+  <p><%= product.name %>, <%= product.description %>, <%= product.formatted_price %> </p>
+
+<%= link_to("Product Modify", product_path(product) ) %>
+
 <% end %>
 
 
