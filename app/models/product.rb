@@ -10,7 +10,7 @@ class Product < ActiveRecord::Base
     sprintf("%.2f", price_in_dollars)
   end
 end
-
+subl 
 class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :product
