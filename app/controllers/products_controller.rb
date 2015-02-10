@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
   		redirect_to products_url
   	else
   		render :new
+  		flash.now[:alert] = "Error saving product"
+  		render :new
   	end
 	end
 
@@ -37,7 +39,7 @@ class ProductsController < ApplicationController
 
   def destroy
   	@product = Product.find(params[:id])
-  	
+
   	@product.destroy
   	redirect_to products_path
   end
